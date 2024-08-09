@@ -3,14 +3,13 @@ import axios from "axios";
 import "./App.css";
 
 function App() {
-
-  axios.defaults.withCredentials = true
+  axios.defaults.withCredentials = true;
 
   const [count, setCount] = useState("");
 
   const handleSubmit = async () => {
     try {
-      const res = await axios.post("http://localhost:8080",{count});
+      const res = await axios.post("https://de-9lxv.onrender.com", { count });
       console.log(res.data);
     } catch (error) {
       console.log(error.message);
@@ -18,7 +17,7 @@ function App() {
   };
   const handleSubmitClear = async () => {
     try {
-      const res = await axios.get("http://localhost:8080/clear");
+      const res = await axios.get("https://de-9lxv.onrender.com/clear");
       console.log(res.data);
     } catch (error) {
       console.log(error.message);
